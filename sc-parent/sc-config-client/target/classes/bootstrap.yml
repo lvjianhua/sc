@@ -18,6 +18,7 @@ spring:
         service-id: sc-config-server
       profile: dev
       name: sc-config,sc-config-client
+#集群服务      
 eureka:
   client:
     serviceUrl:
