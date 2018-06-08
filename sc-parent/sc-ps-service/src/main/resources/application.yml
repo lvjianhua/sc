@@ -1,0 +1,39 @@
+server:
+  port: 9002
+  tomcat:
+    uri-encoding: UTF-8  
+spring:
+  application:
+    name: ps-service
+# 连接数据库
+  datasource:
+    url: jdbc:postgresql://172.16.4.61:5432/sc_db
+    username: postgres
+    password: 123
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: true
+    generate-ddl: false
+    properties.hibernate.show_sql: true
+    properties.hibernate.dialect: org.sc.common.dao.dialect.JsonPostgreSQLDialect
+    properties.hibernate.hbm2ddl.auto: update  
+  aop:
+    auto: true
+    proxy-target-class: true    
+#整合Spring Security实现访问API页面输入用户名密码           
+security:
+  basic:
+    path: /swagger-ui.html
+    enabled: false
+  user:
+    name: lvjh
+    password: 123456  
+feign:
+  hystrix:
+    enabled: true             
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

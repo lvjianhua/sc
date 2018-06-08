@@ -1,0 +1,7 @@
+# 配置远程仓库
+#spring:
+#  cloud:
+#    config:
+#      uri: http://localhost:8899
+#      name: ps-service
+#      profile: test

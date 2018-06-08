@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.sc</groupId>
+    <artifactId>sc-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>org.sc</groupId>
+  <artifactId>sc-ps-service</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>sc-ps-service</name>
+  <packaging>jar</packaging>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+        <!-- 加载sc-common项目 -->
+	    <dependency>
+	        <groupId>org.sc</groupId>
+	        <artifactId>sc-common</artifactId>
+	        <version>0.0.1-SNAPSHOT</version>
+	    </dependency>
+        <!-- 加载sc-common-dao项目 -->
+	    <dependency>
+	        <groupId>org.sc</groupId>
+	        <artifactId>sc-common-dao</artifactId>
+	        <version>0.0.1-SNAPSHOT</version>
+	    </dependency> 	     
+  		<!-- 加载sc-ps-facade实体项目 -->
+	    <dependency>
+	        <groupId>org.sc</groupId>
+	        <artifactId>sc-ps-facade</artifactId>
+	        <version>0.0.1-SNAPSHOT</version>
+	    </dependency>  
+	    <dependency>
+	        <groupId>org.springframework.cloud</groupId>
+	        <artifactId>spring-cloud-starter-config</artifactId>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.springframework.cloud</groupId>
+	        <artifactId>spring-cloud-starter-eureka</artifactId>
+	    </dependency>
+	    <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>1.5.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-oauth2</artifactId>
+		</dependency>
+	    <!-- 添加feign调用服务依赖 -->	    
+	    <dependency>
+	        <groupId>org.springframework.cloud</groupId>
+	        <artifactId>spring-cloud-starter-feign</artifactId>
+	    </dependency>
+        <!-- 数据库依赖 -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.0.0</version>
+        </dependency>  		    
+	     <!-- 熔断机制 -->	    
+	    <dependency>
+	        <groupId>org.springframework.cloud</groupId>
+	        <artifactId>spring-cloud-starter-hystrix</artifactId>
+	    </dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.1</version>
+			<scope>runtime</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>		
+  </dependencies>
+</project>

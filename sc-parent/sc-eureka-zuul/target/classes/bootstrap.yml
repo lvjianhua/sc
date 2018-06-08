@@ -1,0 +1,29 @@
+server:
+  port: 5000
+  session: 
+    cookie:
+      name: gfresh-az
+spring:
+  application:
+    name: eureka-zuul
+  session:
+    store-type: redis
+  redis:
+    database: 1
+    host: localhost
+    max-active: 8
+    max-idle: 8
+    max-wait: -1
+    min-idle: 0
+    password: lvjianhua
+    prot: 6379
+    redis: 
+      namespace: auth-
+      flush-mode: on-save
+eureka:
+  instance: 
+    preferIpAddress: true
+    nonSecurePort: 5000
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/       

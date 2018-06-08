@@ -1,0 +1,25 @@
+server:
+  port: 8899
+spring:
+  application:
+    name: sc-config-server
+  profiles:
+    active:    
+  cloud:
+    config:
+      server:
+        git:  
+          uri: https://github.com/lvjianhua/sc-config-project.git
+          searchPaths: '{application}'
+          username: lvjianhua
+          password: gitting1314      
+management:
+  security:
+    enabled: false
+security:
+  basic:
+    enabled: false    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

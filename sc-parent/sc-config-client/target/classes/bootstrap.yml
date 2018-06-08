@@ -1,0 +1,26 @@
+server:
+  port: 8897
+management:
+  security:
+    enabled: false
+spring:
+  application:
+    name: sc-config-client
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest  
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: sc-config-server
+      profile: dev
+      name: sc-config,sc-config-client
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
