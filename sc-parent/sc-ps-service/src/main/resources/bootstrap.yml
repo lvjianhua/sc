@@ -1,4 +1,4 @@
-# 配置远程仓库
+# 使用远程仓库的配置
 #spring:
 #  cloud:
 #    config:
