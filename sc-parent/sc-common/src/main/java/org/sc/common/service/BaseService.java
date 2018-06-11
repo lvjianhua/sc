@@ -18,7 +18,7 @@ public abstract class BaseService {
     protected Mapper mapper;
     
     protected String getLoginUserId() {
-    	String profileActive = "test";//System.getProperty("spring.profiles.active");
+    	String profileActive = System.getProperty("spring.profiles.active");
 		this.logger.info("profileActive:" + profileActive);
 		if ("development".equals(profileActive) || "test".equals(profileActive)) {
 			return "1";

@@ -1,13 +1,21 @@
-
+#服务端口
 server:
   port: 8761
+  
+#spring设置  
 spring:
   application:
     name: sc-eureka-server
+
+#服务注册中心配置    
 eureka:
   client:
     #并不自注册,防止自己注册自己
     register-with-eureka: false
     fetch-registry: false
+    registery-fetch-interval-seconds: 5 #从Eureka服务器端获取注册信息的间隔时间，单位：秒
     serviceUrl:
       defaultZone: http://localhost:${server.port}/eureka/
+  instance:
+    lease-expiration-duration-in-seconds: 30 #定义服务失效的时间   
+    lease-renewal-interval-in-seconds: 15 # 定义服务续约任务（心跳）的调用间隔，单位：秒

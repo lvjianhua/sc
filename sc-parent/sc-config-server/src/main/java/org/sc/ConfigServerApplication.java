@@ -9,7 +9,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * 配置服务器启动类
  * 
  * @author Lvjh
- *
+ * 
+ * @EnableConfigServer: 开启配置中心服务器配置。
+ * 
  */
 @SpringBootApplication
 @EnableEurekaClient

@@ -20,7 +20,7 @@
     </properties>  
  
   <dependencies>
-    <!--增加eureka-server的依赖-->
+	<!-- 注册中心 -->
     <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-eureka-server</artifactId>

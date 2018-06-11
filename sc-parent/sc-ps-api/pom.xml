@@ -79,6 +79,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- 用于注册中心访问账号认证 -->		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>

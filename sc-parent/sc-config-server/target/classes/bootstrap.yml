@@ -1,5 +1,7 @@
+#服务端口
 server:
   port: 8899
+#spring配置
 spring:
   application:
     name: sc-config-server
@@ -8,17 +10,18 @@ spring:
   cloud:
     config:
       server:
-        git:  
+        git: #配置远程仓库git地址,用户名,密码 
           uri: https://github.com/lvjianhua/sc-config-project.git
-          searchPaths: '{application}'
+          searchPaths: '{application}' #相对搜索位置
           username: lvjianhua
-          password: gitting1314      
+          password: gitting1314                
 management:
   security:
     enabled: false
 security:
   basic:
-    enabled: false    
+    enabled: false
+#注册到eureka服务中心        
 eureka:
   client:
     serviceUrl:

@@ -10,7 +10,8 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
  * ps服务提供者启动类
  * 
  * @author Lvjh
- *
+ * 
+ * @EnableDiscoveryClient:激活对配置中心的支持
  */
 @SpringBootApplication
 @EnableDiscoveryClient

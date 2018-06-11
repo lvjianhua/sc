@@ -9,7 +9,8 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  * 服务注册中心启动类
  * 
  * @author lv
- * @EnableEurekaServer:开启Eureka server的功能
+ * 
+ * @EnableEurekaServer: 该注解表明应用为eureka服务，有可以联合多个服务作为集群，对外提供服务注册以及发现功能
  */
 
 @EnableEurekaServer
