@@ -7,7 +7,7 @@ spring:
     name: ps-service
 # 连接数据库
   datasource:
-    url: jdbc:postgresql://172.16.4.61:5432/sc_db
+    url: jdbc:postgresql://localhost:5432/sc_db
     username: postgres
     password: 123
     driverClassName: org.postgresql.Driver
