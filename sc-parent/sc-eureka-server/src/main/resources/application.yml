@@ -1,12 +1,10 @@
 #服务端口
 server:
   port: 8761
-  
 #spring设置  
 spring:
   application:
     name: sc-eureka-server
-
 #服务注册中心配置    
 eureka:
   client:
