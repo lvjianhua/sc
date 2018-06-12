@@ -35,4 +35,28 @@ public interface UserService  extends BaseLogicService<User>{
     @RequestMapping(value = UserUrls.LOGIN, method = {RequestMethod.POST})
     User login(@RequestBody User user);
 	
+    /**
+     * 新增用户
+     *
+     * @param user
+     */
+    @RequestMapping(value = UserUrls.ADD_USER, method = {RequestMethod.POST})
+    String addUser(@RequestBody User user);    
+    
+    /**
+     * 检测用户用户名或手机或邮箱是否重复
+     *
+     * @param user
+     */
+    @RequestMapping(value = UserUrls.CHECK_USER_ATTRIBUTE, method = {RequestMethod.POST})
+    Boolean checkUserAttribute(@RequestBody User user);
+
+    /**
+     * 根据条件获取用户列表
+     *
+     * @param user
+     * @return
+     */
+    @RequestMapping(value = UserUrls.GET_LIST_BY_ENTITY, method = {RequestMethod.POST})
+    List<User> getListByEntity(@RequestBody User user);
 }

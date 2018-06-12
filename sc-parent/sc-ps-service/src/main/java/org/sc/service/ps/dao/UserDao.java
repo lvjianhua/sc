@@ -27,5 +27,8 @@ public interface UserDao extends JpaRepository<User, String>,JpaSpecificationExe
     
     @Query(value = "SELECT * FROM \"user\" WHERE del = 0 AND LOWER(user_name) = LOWER(:userName) AND password = :password", nativeQuery = true)
     List<User> loginByUserName(@Param("userName") String userName, @Param("password") String password);
-    
+ 
+    @Query(value = "SELECT COUNT(*) FROM \"user\" WHERE del = 0 AND LOWER(user_name) = LOWER(:userName)", nativeQuery = true)
+    Integer checkUserName(@Param("userName") String userName);
+
 }

@@ -5,7 +5,7 @@ package org.sc.facade.ps.constant;
  */
 public enum UserType {
 
-    UserAL("UserAL", "客户"),
+	PERSONAL("PERSONAL", "客户"),
 
     STAFF("STAFF", "内部员工"),
 

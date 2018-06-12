@@ -10,6 +10,7 @@ import org.sc.common.model.vo.Response;
 import org.sc.api.ps.controller.urls.UserInfoUrls;
 import org.sc.api.ps.enums.ServiceErrorCode;
 import org.sc.api.ps.model.param.Login;
+import org.sc.api.ps.model.param.Register;
 import org.sc.api.ps.service.UserApiService;
 import org.sc.common.utils.StringUtils;
 import org.sc.common.utils.web.ResponseUtil;
@@ -49,6 +50,24 @@ public class UserController {
         User returnUser = userApiService.login(login);
         return ResponseUtil.ok(returnUser);
     }
+    
+    @ApiOperation(value = "注册", httpMethod = "POST")
+    @RequestMapping(value = UserInfoUrls.REGISTER, method = {RequestMethod.POST})
+    public Response register(@RequestBody Register register) {
+        if (StringUtils.isBlank(register.getPassword())
+                || StringUtils.isBlank(register.getCountryId())
+                || StringUtils.isBlank(register.getMessageCode())) {
+            return ResponseUtil.error(ServiceErrorCode.WRONG_DATA);
+        }
+        userApiService.register(register);
+        return ResponseUtil.ok(null, "注册成功");
+    }
 	
+    @ApiOperation(value = "检测用户用户名或手机或邮箱是否重复", httpMethod = "POST")
+    @RequestMapping(value = "/checkUserAttribute", method = {RequestMethod.POST})
+    public Response checkUserAttribute(@RequestBody User user) {
+    	userApiService.checkUserAttribute(user);
+        return ResponseUtil.ok();
+    }
 }
 

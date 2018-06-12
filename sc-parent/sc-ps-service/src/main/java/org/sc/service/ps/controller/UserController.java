@@ -64,4 +64,46 @@ public class UserController {
         User returnUser = userService.login(user);
         return ResponseUtil.ok(returnUser);
     }
+    
+    /**
+     * 新增用户
+     *
+     * @return
+     */
+    @ApiOperation(value = "新增用户", httpMethod = "POST")
+    @RequestMapping(value = UserUrls.ADD_USER, method = {RequestMethod.POST})
+    public Response save(@RequestBody User user) {
+        if (StringUtils.isBlank(user.getPassword())
+                || StringUtils.isBlank(user.getCountryId())) {
+            return ResponseUtil.error(ServiceErrorCode.WRONG_DATA);
+        }
+        String userId = userService.addUser(user);
+        return ResponseUtil.ok(userId);
+    }
+    
+    /**
+     * 检测用户用户名或手机或邮箱是否重复
+     *
+     * @param user
+     * @return
+     */
+    @ApiOperation(value = "检测用户用户名或手机或邮箱是否重复", httpMethod = "POST")
+    @RequestMapping(value = UserUrls.CHECK_USER_ATTRIBUTE, method = {RequestMethod.POST})
+    public Response checkUserAttribute(@RequestBody User user) {
+        userService.checkUserAttribute(user);
+        return ResponseUtil.ok();
+    }
+    
+    /**
+     * 根据条件获取用户列表
+     *
+     * @param user
+     * @return
+     */
+    @ApiOperation(value = "根据条件获取用户列表", httpMethod = "POST")
+    @RequestMapping(value = UserUrls.GET_LIST_BY_ENTITY, method = {RequestMethod.POST})
+    public Response getListByEntity(@RequestBody User user) {
+        List<User> users = userService.getListByEntity(user);
+        return ResponseUtil.ok(users);
+    }
 }

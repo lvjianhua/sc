@@ -8,10 +8,10 @@ import org.sc.common.dao.controller.BaseLogicController;
 import org.sc.facade.ps.model.param.QueryPrivilege;
 import org.sc.facade.ps.model.table.Privilege;
 import org.sc.facade.ps.model.table.Role;
+import org.sc.facade.ps.model.vo.RolePrivilegeVo;
 import org.sc.facade.ps.service.PrivilegeService;
 import org.sc.facade.ps.urls.PrivilegeUrls;
 import org.sc.facade.ps.urls.RoleUrls;
-import org.sc.facade.ps.vo.RolePrivilegeVo;
 import org.sc.service.ps.enums.ServiceErrorCode;
 
 import io.swagger.annotations.Api;

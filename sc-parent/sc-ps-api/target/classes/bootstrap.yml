@@ -12,8 +12,8 @@ spring:
 #      name: ${spring.application.name}
 #      profile: ${spring.profiles.active}
 #rabbitmq来实现消息总线的功能
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
