@@ -11,9 +11,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class ZuulProp {
 //    @Value("${zuulprop.loginAccessUrl}")
-    private String loginAccessUrl = "/login";
+    private String loginAccessUrl = "";
 //    @Value("${zuulprop.allowOrigin}")
-    private String allowOrigin = "172.16.4.61,localhost";
+    private String allowOrigin = ".gfresh.cn,//gfresh.cn,.igfresh.com";
 //    @Value("${zuulprop.oAuthTimes}")
     private Integer oAuthTimes = 5;
 //    @Value("${zuulprop.scheme}")

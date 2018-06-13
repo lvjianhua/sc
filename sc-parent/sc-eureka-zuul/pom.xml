@@ -89,7 +89,7 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-feign</artifactId>
-		</dependency> 	    
+		</dependency>		 	    
   </dependencies>
 	<dependencyManagement>
 		<dependencies>
