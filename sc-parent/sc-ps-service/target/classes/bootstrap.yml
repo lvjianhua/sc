@@ -1,7 +1,7 @@
 # 使用远程仓库的配置
-#spring:
-#  cloud:
-#    config:
-#      uri: http://localhost:8899
-#      name: ps-service
-#      profile: test
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8899
+      name: ps-service
+      profile: test
