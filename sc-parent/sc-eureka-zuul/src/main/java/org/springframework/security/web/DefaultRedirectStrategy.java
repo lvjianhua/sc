@@ -35,7 +35,9 @@ import org.sc.utils.SpringContextUtils;
 /**
  * Simple implementation of <tt>RedirectStrategy</tt> which is the default used
  * throughout the framework.
- *
+ * 
+ * RedirectStrategy是Spring提供的一个客户端跳转的工具类。
+ * 
  * @author Luke Taylor
  * @since 3.0
  */

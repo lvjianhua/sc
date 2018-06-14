@@ -1,37 +1,27 @@
 spring:
-#  cloud:
-#    config:
-#      uri: ${spring.profiles.url}
-#      name: ${spring.application.name}
-#      profile: ${spring.profiles.active}
-  application:
-    name: oauth-server
+  cloud:
+    config:
+      uri: http://localhost:8899
+      name: oauth-server
+      profile: test
   session:
     store-type: redis
     redis: 
       namespace: auth-
       flush-mode: on-save
 
-server:
-  port: 9100
-  # Use different context-path to avoid session cookie overlapping
-  context-path: /uaa
-  use-forward-headers: true
-  session: 
-    cookie: 
-      name: gfresh-au 
-
-security:
-  basic:
-    enabled: false
-  user:
-    name: dwb
-    password: 123456
-  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 10000
+#security:
+#  basic:
+#    enabled: false
+#  user:
+#    name: dwb
+#    password: 123456
+#  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
+#
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 10000

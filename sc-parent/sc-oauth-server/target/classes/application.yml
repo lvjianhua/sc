@@ -1,23 +1,24 @@
 spring:
-  profiles: test
-  thymeleaf.cache: false
-  aop:
-    auto: true
-   
-eureka:
-  instance: 
-    preferIpAddress: true
-    nonSecurePort: 9100
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/      
-      
-logging:
-  level.org.springframework.security: DEBUG
- 
+  application:
+    name: oauth-server
+#spring:
+#  profiles: test
+#  thymeleaf.cache: false
+#  aop:
+#    auto: true
+#   
+#eureka:
+#  instance: 
+#    preferIpAddress: true
+#    nonSecurePort: 9100
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/           
+#logging:
+#  level.org.springframework.security: DEBUG
 #authprop: 
-#  allowOrigin: .gfresh.cn,//gfresh.cn,.igfresh.com
-#  zuulIp: 10.10.100.125
-#  zuulPort: 9000
-#  zuulDns: 10.10.100.125
+#  allowOrigin: localhost,172.16.4.63
+#  zuulIp: localhost
+#  zuulPort: 5000
+#  zuulDns: localhost
 #  scheme: http

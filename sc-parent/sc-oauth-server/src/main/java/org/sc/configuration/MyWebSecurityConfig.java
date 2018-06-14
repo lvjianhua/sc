@@ -14,7 +14,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 /**
- * Created by Webb Dong on 2017/4/5.
+ * oauth核心配置类:权限配置类
+ * 
  */
 @Configuration
 @EnableWebSecurity

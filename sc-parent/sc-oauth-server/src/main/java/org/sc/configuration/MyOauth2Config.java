@@ -25,7 +25,9 @@ import java.util.Map;
 
 
 /**
- * Created by Webb Dong on 2017/4/5.
+ * 授权服务器配置类
+ * 
+ * oauth核心配置类:认证授权服务端
  */
 @Configuration
 @EnableAuthorizationServer

@@ -34,9 +34,16 @@ import org.sc.client.UserClient;
 import org.sc.controller.Response;
 import org.sc.service.RedisService;
 
-/**
- * Created by admin on 2017/5/11.
- */
+/** 
+ * 加载资源与权限的对应关系  
+ * 
+ * 该过滤器的主要作用就是通过spring著名的IoC生成securityMetadataSource。  
+ * securityMetadataSource相当于本包中自定义的MyInvocationSecurityMetadataSourceService。  
+ * 该MyInvocationSecurityMetadataSourceService的作用提从数据库提取权限和资源，装配到HashMap中，  
+ * 供Spring Security使用，用于权限校验。  
+ * 
+ * @author sparta 11/3/29  
+ */  
 @Service
 public class MyFilterSecurityMetadataSource implements FilterInvocationSecurityMetadataSource {
 	private Logger logger = LoggerFactory.getLogger(getClass());
@@ -74,7 +81,7 @@ public class MyFilterSecurityMetadataSource implements FilterInvocationSecurityM
 	 * @param object
 	 * @return
 	 */
-
+	// 返回所请求资源所需要的权限    
 	@Override
 	public Collection<ConfigAttribute> getAttributes(Object object) {
 		/** 通过fegin来加载对应的授权url信息 */
@@ -168,6 +175,7 @@ public class MyFilterSecurityMetadataSource implements FilterInvocationSecurityM
 
 	}
 
+	// 加载系统资源与权限列表
 	@SuppressWarnings("rawtypes")
 	private void loadResourceDefine() {
 		if (resourceMap == null) {
@@ -179,6 +187,7 @@ public class MyFilterSecurityMetadataSource implements FilterInvocationSecurityM
 		configAttributes.add(new SecurityConfig("ROLE_UAA_ACCESS"));
 		resourceMap.put("ROLE_UAA_ACCESS", configAttributes);
 
+		// 获取角色的权限
 		Response response = userClient.getRolePrivilege();
 
 		String sss = JSON.toJSONString(response.getData());

@@ -23,6 +23,8 @@ import org.sc.utils.RequestCorsUtils;
 
 /**
  * Created by admin on 2017/5/11.
+ * 
+ * spring security实现类:过滤用户请求
  */
 @Component
 public class MySecurityFilter extends AbstractSecurityInterceptor implements Filter {

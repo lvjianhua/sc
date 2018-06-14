@@ -17,6 +17,9 @@ import java.util.Map;
 
 /**
  * Created by Webb Dong on 2017/4/7.
+ * 
+ * OAuth2ClientContextFilter：主要作用是重定向，当遇到需要权限的页面或URL，代码抛出异常，这时这个Filter将重定向到OAuth鉴权的地址，
+ * 
  */
 public class DynamicOauth2ClientContextFilter extends OAuth2ClientContextFilter {
 	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
