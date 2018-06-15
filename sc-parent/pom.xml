@@ -71,5 +71,6 @@
     <module>sc-ps-facade</module>
     <module>sc-oauth-server</module>
 	<module>sc-common-dao</module>
+	<module>sc-jobs</module>
   </modules>
 </project>

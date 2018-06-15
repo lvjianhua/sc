@@ -9,7 +9,6 @@ spring:
     redis: 
       namespace: auth-
       flush-mode: on-save
-
 #security:
 #  basic:
 #    enabled: false
@@ -17,7 +16,6 @@ spring:
 #    name: dwb
 #    password: 123456
 #  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
-#
 #hystrix:
 #  command:
 #    default:
