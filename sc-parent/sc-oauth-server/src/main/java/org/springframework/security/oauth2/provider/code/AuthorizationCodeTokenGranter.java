@@ -129,8 +129,8 @@ public class AuthorizationCodeTokenGranter extends AbstractTokenGranter {
 	}
 
 	public static void main(String[] args) {
-		String storeRedirectUri = "https://zuul.gfresh.cn/login";
-		String requestRedirectUri = "http://zuul.gfresh.cn/login";
+		String storeRedirectUri = "https://172.16.4.61/login";
+		String requestRedirectUri = "http://172.16.4.61/login";
 
 		storeRedirectUri = storeRedirectUri.substring(storeRedirectUri.indexOf("://") + 3);
 		requestRedirectUri = requestRedirectUri.substring(requestRedirectUri.indexOf("://") + 3);

@@ -41,7 +41,7 @@ import org.springframework.web.context.request.ServletWebRequest;
  * <ul>
  * <li>The {@link ContentNegotiationStrategy} will resolve the {@link MediaType} 's for
  * the current request</li>
- * <li>Each matchingMediaTypes that was passed into the constructor will be compared
+ * <li>Each matchingMediaTypes that was passed intno the constructor will be compared
  * against the {@link MediaType} instances resolved from the
  * {@link ContentNegotiationStrategy}.</li>
  * <li>If one of the matchingMediaTypes is compatible with one of the resolved

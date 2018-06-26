@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -27,6 +28,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 import java.util.regex.Pattern;
 
@@ -36,6 +38,7 @@ import java.util.regex.Pattern;
 @Configuration
 @EnableOAuth2Sso
 @EnableWebSecurity
+@Order(1)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private static final String CSRF_COOKIE_NAME = "XSRF-TOKEN";
     private static final String CSRF_HEADER_NAME = "X-XSRF-TOKEN";

@@ -17,7 +17,7 @@ public class UserJob {
     private UserService userService;
 
     /**
-     * 每隔30分钟跑一次<br/>
+     * 每隔1分钟跑一次<br/>
      * 查询用户的信息<br/>
      * @throws Exception
      */

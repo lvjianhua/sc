@@ -10,7 +10,7 @@ public class User {
 	/**
      * 用户名，登陆名
      */
-    private String name;
+    private String userName;
     
     /**
      * 密码

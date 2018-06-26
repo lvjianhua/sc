@@ -9,17 +9,10 @@ spring:
     redis: 
       namespace: auth-
       flush-mode: on-save
-#security:
-#  basic:
-#    enabled: false
-#  user:
-#    name: dwb
-#    password: 123456
-#  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
-#hystrix:
-#  command:
-#    default:
-#      execution:
-#        isolation:
-#          thread:
-#            timeoutInMilliseconds: 10000
+security:
+  oauth2:
+    resource:
+      filter-order: 3 
+  basic:
+    enabled: false
+  ignored: /css/**,/js/**,/favicon.ico,/webjars/**          

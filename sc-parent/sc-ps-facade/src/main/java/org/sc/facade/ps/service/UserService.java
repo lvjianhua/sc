@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author lvjh
  *
  */
-@FeignClient(value = "ps-service",path = "user")
+@FeignClient(value = "ps-service",path = "/user")
 public interface UserService  extends BaseLogicService<User>{
 	
 	@RequestMapping(value="/getUsers",method = RequestMethod.GET)

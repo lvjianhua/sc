@@ -30,7 +30,7 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
     @Autowired
     private MyUserDetailsService myUserDetailsService;
     @Autowired
-    private UserClient UserClient;
+    private UserClient userClient;
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -39,9 +39,9 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
         
         //password加密 和验证码验证等信息可以在此处体现
         User loginUser = new User();
-        loginUser.setName(username);
+        loginUser.setUserName(username);
         loginUser.setPassword(password);
-        Object returnObj = UserClient.login(loginUser);
+        Object returnObj = userClient.login(loginUser);
         
         String tmpStr = JSON.toJSONString(returnObj);
         
