@@ -1,0 +1,112 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8899
+      name: zuul-server
+      profile: test
+  session:
+    store-type: redis
+    redis: 
+      namespace: zuul-
+      flush-mode: on-save
+  http:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+      max-request-size: 5MB
+      location: /tmp/upload
+#logging:
+#  level.com.netflix.zuul: DEBUG
+#zuul:
+#  hystrix:
+#    threadpool:
+#      coreSize: 10
+#      maxQueueSize: -1
+#      queueSizeRejectionThreshold: 5
+#      keepAliveTimeMinutes: 1
+#      metrics:
+#        rollingStats:
+#          timeInMilliseconds: 100000
+#        rollingPercentile:
+#          numBuckets: 10
+#  routes:
+#    product-api:
+#      sensitiveHeaders:
+#      path: /api/product/**
+#      stripPrefix: false
+#    platform-api:
+#      sensitiveHeaders:
+#      path: /api/platform/**
+#      stripPrefix: false
+#    logistics-api:
+#      sensitiveHeaders:
+#      path: /api/logistics/**
+#      stripPrefix: false
+#    order-api:
+#      sensitiveHeaders:
+#      path: /api/order/**
+#      stripPrefix: false
+#    user-api:
+#      sensitiveHeaders:
+#      path: /api/user/**
+#      stripPrefix: false
+#    shop-api:
+#      sensitiveHeaders:
+#      path: /api/shop/**
+#      stripPrefix: false
+#    auth-server:
+#      sensitiveHeaders:
+#      path: /uaa/**
+#      stripPrefix: false
+#  add-proxy-headers: true
+#
+#security:
+#  # Disable Spring Boot basic authentication
+#  basic:
+#    enabled: false
+#  oauth2:
+#    sso:
+#      loginPath: /login
+#    client:
+#      accessTokenUri: http://localhost:${server.port}/uaa/oauth/token
+#      userAuthorizationUri: /uaa/oauth/authorize
+#      clientId: retailstore
+#      clientSecret: retailStoreSecret
+#    resource:
+#      jwt:
+#        keyValue: |
+#          -----BEGIN PUBLIC KEY-----
+#          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGp/Q5lh0P8nPL21oMMrt2RrkT9AW5jgYwLfSUnJVc9G6uR3cXRRDCjHqWU5WYwivcF180A6CWp/ireQFFBNowgc5XaA0kPpzEtgsA5YsNX7iSnUibB004iBTfU9hZ2Rbsc8cWqynT0RyN4TP1RYVSeVKvMQk4GT1r7JCEC+TNu1ELmbNwMQyzKjsfBXyIOCFU/E94ktvsTZUHF4Oq44DBylCDsS1k7/sfZC2G5EU7Oz0mhG8+Uz6MSEQHtoIi6mc8u64Rwi3Z3tscuWG2ShtsUFuNSAFNkY7LkLn+/hxLCu2bNISMaESa8dG22CIMuIeRLVcAmEWEWH5EEforTg+QIDAQAB
+#          -----END PUBLIC KEY-----
+#      id: openid
+#      serviceId: ${PREFIX:}resource
+#
+#logging:
+#  level.org.springframework.security: DEBUG
+#turbine:
+#  aggregator:
+#    clusterConfig: SAMPLE-HYSTRIX-AGGREGATE
+#  appConfig: SAMPLE-HYSTRIX-AGGREGATE
+#management:
+#  security:
+#    enabled: false
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          strategy: THREAD
+#          thread:
+#            timeoutInMilliseconds: 100000
+#    product-service:
+#      execution:
+#        isolation:
+#          strategy: THREAD
+#          thread:
+#            timeoutInMilliseconds: 100000
+#    auth-server:
+#      execution:
+#        isolation:
+#          strategy: THREAD
+#          thread:
+#            timeoutInMilliseconds: 1000000

@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8899
+      name: auth-server
+      profile: test
+  session:
+    store-type: redis
+    redis: 
+      namespace: auth-
+      flush-mode: on-save
+
+#security:
+#  basic:
+#    enabled: false
+#  user:
+#    name: lvjh
+#    password: 123456
+#  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
+#
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 10000

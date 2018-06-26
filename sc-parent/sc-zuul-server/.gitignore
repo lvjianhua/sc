@@ -1,0 +1,25 @@
+# Maven #
+target/
+log/
+
+# IDEA #
+.idea/
+*.iml
+
+# Eclipse #
+.settings/
+.CVS
+.CVS/
+.svn
+.svn/
+.metadata/
+.classpath
+.project
+classes/
+*.class
+Servers/
+rebel.xml
+
+# Mac #
+.DS_Store
+/bin/

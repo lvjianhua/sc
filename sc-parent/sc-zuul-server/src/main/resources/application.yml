@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: zuul-server
+
+#eureka:
+#  instance:
+#    nonSecurePort: 9000
+#  client:
+#    service-url:
+#      defaultZone: http://10.10.100.125:7000/eureka
+## Define the port where the API gateway server would be running
+#server:
+#  port: 9000
