@@ -42,7 +42,7 @@ public class UserController {
 	}
 	
     @ApiOperation(value = "登录", httpMethod = "POST")
-    @RequestMapping(value = UserInfoUrls.LOGIN, method = {RequestMethod.POST})
+    @RequestMapping(value = UserInfoUrls.LOGIN, method = {RequestMethod.POST},consumes="application/json")
     public Response login(@RequestBody Login login) {
         if (StringUtils.isBlank(login.getUserName())) {
             return ResponseUtil.error(ServiceErrorCode.WRONG_DATA);
