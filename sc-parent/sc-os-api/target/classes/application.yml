@@ -1,0 +1,40 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: os-api
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/  
+      
+#整合Spring Security实现访问API页面输入用户名密码 ,enabled:true开启        
+security:
+  basic:
+    path: /swagger-ui.html
+    enabled: false
+  user:
+    name: lvjh
+    password: 123456
+#配置消息队列mq   
+mq:
+  accesskey: LTAILQo6J4K7joYr
+  secretkey: 7nZb1WiDm0Dt4AQimPHvL3BnQpi8sW
+  onsaddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+  topic:
+    business: selectUsers
+  producerId:
+    business: PID_lvjianhua123456
+  consumerId:
+    business: CID_lvjianhua123456
+  subExpression : '*'  
+ 
+
+  
+  
