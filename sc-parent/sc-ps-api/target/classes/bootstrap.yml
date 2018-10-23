@@ -1,10 +1,10 @@
 # 配置远程仓库
-spring:
-  cloud:
-    config:
-      uri: http://localhost:8899
-      name: ps-api
-      profile: test
+#spring:
+#  cloud:
+#    config:
+#      uri: http://localhost:8899
+#      name: ps-api
+#      profile: test
 #spring:
 #  cloud:
 #    config:

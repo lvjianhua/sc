@@ -1,8 +1,33 @@
 server:
   port: 9001
+  path: http://localhost:9001
 spring:
   application:
     name: ps-api
+#授权码g，在QQ邮箱客户端生成 修改成自己的  设置-账户-开启服务-获取授权码
+  mail:
+    host: smtp.sohu.com
+    username: wlmx_lvjianhua@sohu.com
+    password: 1314shouhou12306
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true       
+#freemarker
+  freemarker:
+    template-loader-path: classpath:/static/template/
+    enabled: true
+    cache: false
+    charset: UTF-8
+    content-type: text/html
+    allow-request-override: false
+    check-template-location: true
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
 hystrix:
   command:
     default:
@@ -21,4 +46,20 @@ security:
     enabled: false
   user:
     name: lvjh
-    password: 123456   
+    password: 123456
+#配置消息队列mq   
+mq:
+  accesskey: LTAILQo6J4K7joYr
+  secretkey: 7nZb1WiDm0Dt4AQimPHvL3BnQpi8sW
+  onsaddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+  topic:
+    business: selectUsers
+  producerId:
+    business: PID_lvjianhua123456
+  consumerId:
+    business: CID_lvjianhua123456
+  subExpression : '*'  
+ 
+
+  
+  

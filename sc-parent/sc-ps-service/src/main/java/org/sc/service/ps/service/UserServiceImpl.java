@@ -165,5 +165,4 @@ public class UserServiceImpl extends BaseLogicServiceImpl<User> implements UserS
     public List<User> getListByEntity(User user) {
         return userDao.findAll(Example.of(user), new Sort(Sort.Direction.DESC, "updateTime"));
     }
-
 }

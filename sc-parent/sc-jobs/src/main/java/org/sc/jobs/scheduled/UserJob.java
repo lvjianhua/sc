@@ -23,7 +23,7 @@ public class UserJob {
      */
     @Scheduled(cron = "0 0/1 * * * ?")
     public void findByUserName() throws Exception {
-    	User user = userService.findByUserName("楚留香");
+    	User user = userService.findByUserName("admin");
     	System.out.println(user);
     }
 
