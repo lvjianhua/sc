@@ -8,8 +8,9 @@ spring:
 #服务注册中心配置    
 eureka:
   client:
-    #并不自注册,防止自己注册自己
+    #并不自己注册,防止自己注册自己,因为它本身就是服务
     register-with-eureka: false
+    #这里不需要抓取注册表
     fetch-registry: false
     registery-fetch-interval-seconds: 5 #从Eureka服务器端获取注册信息的间隔时间，单位：秒
     serviceUrl:

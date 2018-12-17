@@ -9,6 +9,7 @@ import org.sc.facade.os.service.TestService;
 import org.sc.service.os.dao.primary.TestPrimaryDao;
 import org.sc.service.os.dao.secondary.TestSecondaryDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -27,8 +28,12 @@ public class TestServiceImpl implements TestService{
 	@Resource
 	private MongoTemplate mongoTemplate;
 	
+	@Value("${server.port}")
+	String serverPort;
+	
 	@Override
 	public Test findByName(String name) {
+		System.out.print("请求端口号:"+serverPort);
 		return testPrimaryDao.findByName(name);
 	}
 	@Override
