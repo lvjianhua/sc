@@ -13,6 +13,7 @@ eureka:
     fetch-registry: false
     registery-fetch-interval-seconds: 5 #从Eureka服务器端获取注册信息的间隔时间，单位：秒
     serviceUrl:
+      #如果有多个Eureka Server，则在注册时使用逗号(，)分隔，将除自身外的其他所有Eureka Server地址进行配置。
       defaultZone: http://localhost:${server.port}/eureka/
   instance:
     lease-expiration-duration-in-seconds: 30 #定义服务失效的时间   
